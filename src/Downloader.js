@@ -23,6 +23,7 @@ export default class Downloader extends Component {
         if (!stateData) message.error('Unable to retrieve pin data');
         else {
             delete stateData.selected;
+            delete stateData.visible;
             const values = ['To, Location'];
             Object.keys(stateData).forEach((pin) => {
                 if (stateData[pin] !== '') {

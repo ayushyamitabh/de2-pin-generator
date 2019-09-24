@@ -126,6 +126,17 @@ body {
   height: 2.5rem;
 }
 
+.githubIcon {
+  width: 64px;
+  height: 64px;
+  padding: 20px;
+}
+
+.githubIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
 @media only screen and (min-width: 1025px) {
   .boardRegion{
     margin-left: 25%;

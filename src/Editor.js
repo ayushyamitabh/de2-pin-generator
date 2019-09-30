@@ -139,7 +139,27 @@ export default class Editor extends Component {
                         </tbody>
                     </table>
                     {
-                        isfull ? <Button block type="danger" style={{ flex: 1 }} size="small">Remove</Button> : null
+                        isfull ?
+                        <Button
+                            block 
+                            type="danger"
+                            style={{ flex: 1 }}
+                            size="small"
+                            onClick={
+                                () => {
+                                    for (let i = 0; i < 7; i++) {
+                                        this.popoverValueChange({
+                                            target : {
+                                                value: ''
+                                            }
+                                        }, bc + `[${i}]`);
+                                    }
+                                }
+                            }
+                        >
+                                Remove
+                        </Button>
+                        : null
                     }
                 </div>
             );
@@ -156,9 +176,27 @@ export default class Editor extends Component {
                         fontFamily: 'consolas'
                     }}
                 />
-                {
-                    isfull ? <Button block type="danger" style={{ flex: 1 }} size="small">Remove</Button> : null
-                }
+                    {
+                        isfull ?
+                        <Button
+                            block 
+                            type="danger"
+                            style={{ flex: 1 }}
+                            size="small"
+                            onClick={
+                                () => {
+                                    this.popoverValueChange({
+                                        target : {
+                                            value: ''
+                                        }
+                                    }, bc );
+                                }
+                            }
+                        >
+                                Remove
+                        </Button>
+                        : null
+                    }
             </div>
         );
     }

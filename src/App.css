@@ -52,30 +52,43 @@ body {
 
 .boardRegion {
   display: flex;
-  margin: 25px 0;
+  width: 100%;
+  height: 5rem;
   transition: all linear 1s;
-  margin-left: 50%;
+  justify-content: center;
+  min-width: 911px;
+  padding: 0px 75px;
+  margin: 1rem auto;
 }
 
-.boardComponentContainer {
-  flex: 0 1;
+.boardComponent {
+  width: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: padding-box;
   cursor: pointer;
-  transition: all linear 0.3s;
-  margin: 0 20px;
-  border-radius: 5px;
+  margin: 0 5px;
+  border-radius: 10px !important;
+  background-color: white;
 }
 
-.boardComponentContainer.inactive {
-  opacity: 0.3;
+.boardComponent.inactive {
+  opacity: 0.2;
 }
 
-.boardComponentContainer.active {
+.boardComponent.active {
   opacity: 1;
 }
 
-.boardComponentContainer.selected {
+.boardComponent.selected {
   filter: drop-shadow(0px 0px 20px rgba(0,0,0,0.5));
 }
+
+.boardComponent.inactive:hover {
+  opacity: 0.5;
+}
+
 .ant-collapse-content.ant-collapse-content-active .ant-collapse-content-box {
   padding: 0 !important;
 }
@@ -87,10 +100,6 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   height: fit-content;
-}
-
-.pinCard:first-of-type {
-  margin-left: 50%;
 }
 
 .pinCard{
@@ -108,10 +117,6 @@ body {
 .pinCard.selected {
   background: white;
   filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.2));
-}
-
-.boardComponentContainer.inactive:hover {
-  opacity: 0.7;
 }
 
 .loadingIcon {
@@ -135,28 +140,4 @@ body {
 .githubIcon svg {
   width: 100%;
   height: 100%;
-}
-
-@media only screen and (min-width: 1025px) {
-  .boardRegion{
-    margin-left: 25%;
-  }
-  .boardComponentContainer {
-    margin: 0 5px;
-  }
-  .pinCard:first-of-type {
-    margin-left: 25%;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .boardRegion{
-    margin-left: 0;
-  }
-  .boardContainer {
-    align-items: center;
-  }
-  .pinCard:first-of-type {
-    margin-left: 25px;
-  }
 }

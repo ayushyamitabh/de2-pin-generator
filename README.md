@@ -1,7 +1,11 @@
 ### Pin Assignment GUI for Altera DE-2 Board
 Made for use in CCNY courses - CSC 21100, CSC 34200, & CSC 34300
+  
+|           Tool               |                   Link                |             Comments       |  
+| ---------------------------- | ------------------------------------- | -------------------------- |  
+|DE-2 Board Pin Editor         | https://de2-pin-generator.web.app/    | -------------------------- |  
+|Seven Segment Display Decoder | https://de2-pin-generator.web.app/ssd | Comes with pin assignments |  
 
-#### https://de2-pin-generator.web.app/
 
 #### ToDo:
 - Clean up code

@@ -11,7 +11,7 @@ import Ssd from './Ssd';
 
 const { Header, Footer } = Layout;
 
-const SSD_URL = "https://firebasestorage.googleapis.com/v0/b/de2-pin-generator.appspot.com/o/SEVEN_SEGMENT_DISPLAY_DECODER.zip?alt=media&token=2d17642b-f80a-4f41-9d10-2fd337b2eae3";
+const SSD_URL = "https://github.com/ayushyamitabh/de2-pin-generator/raw/master/SEVEN_SEGMENT_DISPLAY_DECODER.zip";
 
 class App extends Component {
   constructor(props) {

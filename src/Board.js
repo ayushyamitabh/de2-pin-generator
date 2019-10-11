@@ -193,7 +193,7 @@ export default class Board extends Component {
                 {
                     BOARD_LAYOUT.map((region, index) =>
                         <section className="boardRegion" key={`board-region-${index}`}>
-                             {
+                            {
                                 region.map((boardComponent, componentIndex) => {
                                     const bc = boardComponent.name;
                                     const isfull = (parentState[`${bc}[0]`] && parentState[`${bc}[1]`]
@@ -208,10 +208,10 @@ export default class Board extends Component {
                                             className={`boardComponent ${isfull ? 'active' : 'inactive'} ${(selected === boardComponent.name) ? 'selected' : ''}`}
                                             key={`region-${index}-component-${componentIndex}`}
                                         >
-                                            <div 
+                                            <div
                                                 key={`region-${index}-comp-${componentIndex}`}
-                                                style={{backgroundImage: `url(${boardComponent.type.component})`}}
-                                                onClick={() => isfull ? setSelected(selected === bc ? null : bc) : null}                                            
+                                                style={{ backgroundImage: `url(${boardComponent.type.component})` }}
+                                                onClick={() => isfull ? setSelected(selected === bc ? null : bc) : null}
                                             > </div>
                                         </Popover>
                                     );
@@ -224,30 +224,3 @@ export default class Board extends Component {
         );
     }
 }
-/**
- * 
- *                             {
-                                region.map((boardComponent, componentIndex) => {
-                                    const bc = boardComponent.name;
-                                    const isfull = (parentState[`${bc}[0]`] && parentState[`${bc}[1]`]
-                                        && parentState[`${bc}[2]`] && parentState[`${bc}[3]`]
-                                        && parentState[`${bc}[4]`] && parentState[`${bc}[5]`]
-                                        && parentState[`${bc}[6]`]) || parentState[bc];
-                                    return (
-                                        <Popover
-                                            arrowPointAtCenter
-                                            content={getContent(boardComponent)}
-                                            title={`[${boardComponent.type.name}] ${boardComponent.name}`}
-                                            className={`boardComponentContainer ${isfull ? 'active' : 'inactive'} ${(selected === boardComponent.name) ? 'selected' : ''}`}
-                                            key={`region-${index}-component-${componentIndex}`}
-                                        >
-                                            <img
-                                                alt={`comp-${boardComponent.name}-${componentIndex}`}
-                                                src={boardComponent.type.component}
-                                                onClick={() => isfull ? setSelected(selected === bc ? null : bc) : null}
-                                            />
-                                        </Popover>
-                                    );
-                                })
-                            }
- */

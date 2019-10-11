@@ -2,13 +2,16 @@
 import './App.css';
 import Logo from './Logo';
 import Editor from './Editor';
-import { Layout, Icon } from 'antd';
+import { Layout, Button } from 'antd';
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Downloader from './Downloader';
+import Ssd from './Ssd';
 
 const { Header, Footer } = Layout;
+
+const SSD_URL = "https://firebasestorage.googleapis.com/v0/b/de2-pin-generator.appspot.com/o/SEVEN_SEGMENT_DISPLAY_DECODER.zip?alt=media&token=2d17642b-f80a-4f41-9d10-2fd337b2eae3";
 
 class App extends Component {
   constructor(props) {
@@ -21,15 +24,26 @@ class App extends Component {
         <Header className="header">
           <Logo style={{ width: 64, height: 64, fill: 'white', padding: 13 }} />
           <span className="mTitle">DE-2 Board Pin Generator</span>
-          <span>
-            <a href="https://github.com/ayushyamitabh/de2-pin-generator" target="_blank" rel="noopener noreferrer">
-              <Icon type="github" className="githubIcon" />
-            </a>
-          </span>
+          <Button
+            style={{ alignSelf: 'center' }}
+            shape="round"
+            icon="download"
+            href="/ssd"
+          >
+            Download Seven Segment Display Decoder
+          </Button>
+          <Button
+            style={{ alignSelf: 'center', marginLeft: 20 }}
+            type="primary"
+            shape="circle"
+            icon="github"
+            href="https://github.com/ayushyamitabh/de2-pin-generator"
+          />
         </Header>
         <Router history={this.history}>
           <Switch>
             <Route exact path="/" render={() => <Editor history={this.history} />} />
+            <Route exact path="/ssd" render={() => <Ssd url={SSD_URL} />} />
             <Route exact path="/download" render={() => <Downloader history={this.history} />} />
           </Switch>
         </Router>
